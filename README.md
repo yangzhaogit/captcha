@@ -14,7 +14,7 @@ This turns generic OCR into a fixed-layout recognition problem where simple imag
 Treat each figure as five independent slots laid out horizontally. The task becomes:
 **binarize → segment into 5 components → classify each component → concatenate**
 
-### Method (Small, Deterministic Pipeline)
+### Method
 
 1. **Binarize**: Estimate background color from image borders and threshold by distance to background using Otsu's method
 2. **Segment**: Use connected components analysis to find character regions, merge/split to get exactly 5 components
