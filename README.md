@@ -32,7 +32,7 @@ Treat each figure as five independent slots laid out horizontally. The task beco
 
 ### Test single image
 ```bash
-python captcha_solver.py infer --image sampleCaptchas/input/input21.jpg --model captcha_model.npz --out prediction.txt
+python captcha_solver.py infer --image sampleCaptchas/input/input100.jpg --model captcha_model.npz --out prediction.txt
 ```
 
 ### Test all images
