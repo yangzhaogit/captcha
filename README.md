@@ -1,9 +1,7 @@
-# CAPTCHA Solver
-
 ## Problem Framing & Solution Formulation
 
 ### Problem Analysis
-The assignment describes a highly constrained CAPTCHA generator:
+The assignment describes a highly constrained generator:
 - Always 5 characters
 - Same font/spacing
 - Largely fixed colors/texture  
@@ -13,7 +11,7 @@ The assignment describes a highly constrained CAPTCHA generator:
 This turns generic OCR into a fixed-layout recognition problem where simple image cues suffice.
 
 ### Solution Approach
-Treat each CAPTCHA as five independent slots laid out horizontally. The task becomes:
+Treat each figure as five independent slots laid out horizontally. The task becomes:
 **binarize → segment into 5 components → classify each component → concatenate**
 
 ### Method (Small, Deterministic Pipeline)
@@ -40,13 +38,4 @@ python captcha_solver.py infer --image sampleCaptchas/input/input21.jpg --model 
 ### Test all images
 ```bash
 python test_all_images.py
-```
-
-### Programmatic testing
-```python
-from captcha_solver import Captcha
-
-solver = Captcha(model_path="captcha_model.npz")
-result = solver("sampleCaptchas/input/input21.jpg", "output.txt")
-print(result)  # prints prediction
 ```
